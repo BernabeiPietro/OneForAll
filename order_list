@@ -1,0 +1,16 @@
+
+
+ordine con cui far andare i programmi e cosa esce da chi e dove deve entrare.
+
+ordine,nome_file,butta_fuori,dentro_cosa
+1),FastQC,primer_lenght,Figaro&QIIME2_body
+2),QIIME2_import,seq_qzv,trunc_finder&dim_min_sample_finder
+3),trunc_cuta_finder,trunc_cuta,Cutadapt
+4),Cutadapt,mp.output_fq_qz,Figaro
+5),Figaro,trunc_f&trunc_r,QIIME2_body
+6),QIIME2_body,mp.ASV_qza&mp.rep_qza,open_qza_to_PICRUSt2
+7),dim_min_sample_finder,dim_min_sample,QIIME2_tail
+8),QIIME2_tail,
+9),open_qza_to_PICRUSt2,dna-sequences.fasta&feature-table.biom,PICRUSt2
+10),PICRUSt2_Tot&PICRUSt2_rarefied,output_per_R
+11),R

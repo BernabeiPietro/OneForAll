@@ -3,13 +3,13 @@ import codecs
 import pandas as pd
 import numpy as np
 
-#"primer_trim= da prendere dall'output fastqc"'
+#"primer_lenght= da prendere dall'output fastqc"'
 
 def run_figaro(mp,md):
     os.system(" \
-    python3 figaro.py -i "+mp.output_fq_qz+" -o "+mp.path_figaro+" -a "+md["a_l"] +"-f "+md["primer_trim"]+ "-r "+md["primer_trim"]+" \
+    python3 figaro.py -i "+mp.output_fq_qz+" -o "+mp.path_figaro+" -a "+md["a_l"] +"-f "+md["primer_lenght"]+ "-r "+md["primer_lenght"]+" \
         ")
-    figaro_report="D:\prova/trimParameters.json" #mp.path_figaro+"trimParameters.json"
+    figaro_report= mp.path_figaro+"trimParameters.json"
     table=pd.read_json(figaro_report)
     trunc_f=table.trimPosition[0][0]
     trunc_r=table.trimPosition[0][1]

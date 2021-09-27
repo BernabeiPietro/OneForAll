@@ -67,7 +67,7 @@ if __name__ == '__main__':
     --i-reads "+rep_qza+" \
     --o-classification "+Tax+" \
     && \
-    qiime metadata "+tabulate+" \
+    qiime metadata tabulate \
     --m-input-file  "+Tax+" \
     --o-visualization "+path_write+" /taxonomy-" +project_name+ ".qzv \
     && \

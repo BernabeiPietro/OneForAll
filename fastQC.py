@@ -56,3 +56,4 @@ def run_fastqc(md,mp):
     value = count_equals(median_table(result))
     return value# estrae i file e li rinomina automaticamente ora vanno mediati i risultati.
 
+#questo sputa fuori un numero che deve essere nella varaibile: "primer_lenght" e buttata in QIIME2 e Figaro

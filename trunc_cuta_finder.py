@@ -3,10 +3,11 @@ import codecs
 import pandas as pd
 import numpy as np
 
-os.system("\
-         7z e "+mp.seq_qzv+" -o"+mp.path_qiime+" quality-plot.html -r")
-fv = +mp.path_qiime+"quality-plot.html"
-oh=pd.read_html(fv)
+def trunc_find(mp):
+    os.system("\
+             7z e "+mp.seq_qzv+" -o"+mp.path_qiime+" quality-plot.html -r")
+    fv = +mp.path_qiime+"quality-plot.html"
+    return find_trunc(pd.read_html(fv))
 
 def find_trunc (oh):
 

@@ -1,19 +1,7 @@
 import os
 
-
-#metadata
-#dim_min_sample
-#col_met
-
-def generate_trunk(md,mp):
-    trunk=0 #dovrebbe essere "trunc"
-    return trunk
-
-
-def qiime(md, mp):
-    # os.system("conda activate qiime2-2021.4")
-    os.system("conda activate qiime2-2021.4 \
-    && \
+def qiime_body(md, mp):
+    os.system("\
     qiime dada2 denoise-paired \
     --i-demultiplexed-seqs " + mp.seq_qza + " \
     --p-trim-left-f " + md["primer_lenght"] + " \
@@ -39,7 +27,7 @@ def qiime(md, mp):
     --o-visualization  " + mp.path_qiime + "/denoising_stat-" + mp.project_name + ".qzv \
     && \
     qiime feature-classifier classify-sklearn \
-    --i-classifier " + classifier + " \
+    --i-classifier " + md["classifier"] + " \
     --i-reads " + mp.rep_qza + " \
     --o-classification " + mp.Tax + " \
     && \
@@ -73,6 +61,5 @@ def qiime(md, mp):
     --i-tree " + mp.path_qiime + "/Tree/unrooted_tree.qza \
     --o-rooted-tree " + mp.path_qiime + "/Tree/rooted_tree.qza \
     ")
-    #vai di QIIME2_tail
 
 

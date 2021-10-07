@@ -1,6 +1,6 @@
 
 import os
-
+#mettici anche 7z
 if __name__ == '__main__':
     os.system("conda create -n OneForAll -y") #cutadapt
     os.system("conda install -n OneForAll -c bioconda -y cutadapt ")

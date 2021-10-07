@@ -12,15 +12,16 @@ def picrust2_tot(mp):
     --verbose \
     ")
 
-"pathway_pipeline.py \
--i "+mp.path_picrust+"/Rarefied/KO_metagenome_out/pred_metagenome_unstrat.tsv.gz \
--o "+mp.path_picrust+"/Rarefied/pathway_redo_ko/ \
---no_regroup \
---map KEGG_pahways_to_KO2.tsv\
-&& \
-pathway_pipeline.py \
--i "+mp.path_picrust+"/Rarefied/KO_metagenome_out/pred_metagenome_contrib.tsv.gz \
--o "+mp.path_picrust+"/Rarefied/pathway_redo_ko/ \
---no_regroup \
---map KEGG_pahways_to_KO2.tsv\
-"
+def from_ec_to_KO_raref(mp):
+    os.system("pathway_pipeline.py \
+    -i "+mp.path_picrust+"/Rarefied/KO_metagenome_out/pred_metagenome_unstrat.tsv.gz \
+    -o "+mp.path_picrust+"/Rarefied/pathway_redo_ko/ \
+    --no_regroup \
+    --map KEGG_pahways_to_KO2.tsv\
+    && \
+    pathway_pipeline.py \
+    -i "+mp.path_picrust+"/Rarefied/KO_metagenome_out/pred_metagenome_contrib.tsv.gz \
+    -o "+mp.path_picrust+"/Rarefied/pathway_redo_ko/ \
+    --no_regroup \
+    --map KEGG_pahways_to_KO2.tsv\
+    ")

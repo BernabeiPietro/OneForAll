@@ -44,12 +44,14 @@ def q_tail(md,mp):
         --m-metadata-file " +  md["metadata"] + " \
         --o-visualization " + mp.path_qiime + "/core_metrics_results/observed_features_group_significance.qzv \
         --verbose \
-        && \
-        qiime diversity beta-group-significance \
-        --i-distance-matrix " + mp.path_qiime + "/core_metrics_results/weighted_unifrac_distance_matrix.qza \
-        --m-metadata-file " +  md["metadata"] + " \
-        --m-metadata-column " + md["col_met"] + " \
-        --o-visualization " + mp.path_qiime + "/core_metrics_results/weighted_unifrac_" + md["col_met"] + "_significance.qzv \
-        --p-permutations 9999 \
-    ")
+     ")
+    if md["col_met"]!="":
+        os.system(" \
+            qiime diversity beta-group-significance \
+            --i-distance-matrix " + mp.path_qiime + "/core_metrics_results/weighted_unifrac_distance_matrix.qza \
+            --m-metadata-file " +  md["metadata"] + " \
+            --m-metadata-column " + md["col_met"] + " \
+            --o-visualization " + mp.path_qiime + "/core_metrics_results/weighted_unifrac_" + md["col_met"] + "_significance.qzv \
+            --p-permutations 9999 \
+        ")
     # vanno fatte variabili apposta per le colonne dei metadata

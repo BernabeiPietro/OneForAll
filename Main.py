@@ -1,11 +1,13 @@
 import Cutadapt
 import Figaro
 import PICRUSt2_Tot
+import PICRUSt2_rarefied
 import QIIME2_body
 import QIIME2_import
 import QIIME2_tail
 import dim_min_sample_finder
 import fastQC
+import open_qza_to_PICRUSt2
 import trunc_cuta_finder
 from ManagerOfPath import ManagerOfPath
 from QIIME2_body import qiime_body
@@ -30,8 +32,10 @@ if __name__ == '__main__':
     md["classifier"] = str(input())
     print("witch metadata columns to regroup ")
     md["col_met"]=str(input())
-    print("amplicon lenght [V4 200,V3-V4 396")  # da chiedere all'inizio
+    print("amplicon lenght [V4 200,V3-V4 396]")  # da chiedere all'inizio
     md["a_l"] = int(input())
+    raref_option = str(input())
+    print("RunPICRUSt2 with rarefied ASV table? Y or N")
     mp=ManagerOfPath(path_write,path_reads,project_name)
     #inizia da qua il programma
 
@@ -44,9 +48,14 @@ if __name__ == '__main__':
     QIIME2_body.qiime_body(md, mp)
     md["dim_min_sample"]= dim_min_sample_finder.dim_min_sample(mp,md)
     QIIME2_tail.q_tail(md,mp)
-#siamo rimasti qua
-    PICRUSt2_Tot.picrust2(mp)
-
+    open_qza_to_PICRUSt2.open_qza_to_picrust_tot(mp)
+    PICRUSt2_Tot.picrust2_tot(mp)
+    PICRUSt2_Tot.from_ec_to_KO_tot(mp)
+    if raref_option=="Y":
+        open_qza_to_PICRUSt2.open_qza_to_picrust_rarefied(mp)
+        PICRUSt2_rarefied.picrust2_tot(mp)
+        PICRUSt2_rarefied.from_ec_to_KO_raref(mp)
+    print("Ho finito, felice di servirti!")
     condition=open("condition.txt","w")
     condition.write(md)
     condition.close()

@@ -45,7 +45,7 @@ def q_tail(md,mp):
         --o-visualization " + mp.path_qiime + "/core_metrics_results/observed_features_group_significance.qzv \
         --verbose \
      ")
-    if md["col_met"]!="":
+    if md["col_met"]!=0:
         os.system(" \
             qiime diversity beta-group-significance \
             --i-distance-matrix " + mp.path_qiime + "/core_metrics_results/weighted_unifrac_distance_matrix.qza \

@@ -45,8 +45,7 @@ def count_equals(median):
 
 #fastqc -o path -t tread inputpath --nogroup
 def run_fastqc(md,mp):
-    os.system("\
-     fastqc -o "+mp.path_fastqc+" -t "+md["tread"]+" "+mp.path_datainput+"/* --nogroup --noextract \
+    os.system("fastqc -o "+mp.path_fastqc+" -t "+md["tread"]+" "+mp.path_datainput+"/*.fastq --nogroup --noextract \
     && \
     7z e "+mp.path_fastqc+"/*.zip -o"+mp.path_fqc_txt+" fastqc_data.txt -aou ")
     dir_element = filter(lambda x: (".txt" in x), os.listdir(mp.path_fastqc))

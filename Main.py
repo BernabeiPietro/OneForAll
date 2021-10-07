@@ -32,7 +32,7 @@ if __name__ == '__main__':
     md["col_met"] = str(input()or "0") #potrebbero essere più di una e per ognuna andrebbe corso il comando: "qiime diversity beta-group-significance" in QIIME2_tail.py
     print("classifier path")
     md["classifier"] = str(input())
-    print("amplicon lenght [V4 200,V3-V4 396]")  # da chiedere all'inizio
+    print("amplicon lenght [V4 291,V3-V4 465]")  # da chiedere all'inizio http://omegabioservices.com/index.php/16s-reference/
     md["a_l"] = str(input())
     print("RunPICRUSt2 with rarefied ASV table? Y or N")
     raref_option = str(input())

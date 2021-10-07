@@ -18,5 +18,11 @@ class ManagerOfPath:
         self.ASV_qza = self.path_qiime + "/ASV-" + project_name + ".qza"
         self.DenStat_qza = self.path_qiime + "/denoising_stat-" + project_name + ".qza"
         self.Tax = self.path_qiime + "/taxonomy-" + project_name + ".qza"
-        for at in self:
-            os.mkdir(at)
+
+        os.mkdir(self.path_qiime)
+        os.mkdir(self.path_cutadapt)
+        os.mkdir(self.path_figaro)
+        os.mkdir(self.path_picrust)
+        os.mkdir(self.path_fastqc)
+        os.mkdir(self.path_fqc_txt)
+

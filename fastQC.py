@@ -50,7 +50,7 @@ def run_fastqc(md,mp):
     dir_element = filter(lambda x: (".txt" in x), os.listdir(mp.path_fqc_txt))
     result = []
     for name_of_file in dir_element:
-        result.append(parser_table(open(mp.path_fastqc + "//" + name_of_file, "r")))
+        result.append(parser_table(open(mp.path_fastqc + name_of_file, "r")))
     value = count_equals(median_table(result))
     return value# estrae i file e li rinomina automaticamente ora vanno mediati i risultati.
 

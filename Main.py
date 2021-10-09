@@ -25,6 +25,10 @@ if __name__ == '__main__':
     project_name=str(input())
     mp = ManagerOfPath(path_write, path_reads, project_name)
 
+    md["path_reads"]=path_reads
+    md["path_write"]=path_write
+    md["project_name"]=project_name
+
     print("sequenza amplificata?")
     md["seq_ampstr"]=str(input())
     print("N of treads? (max 16)")
@@ -39,7 +43,7 @@ if __name__ == '__main__':
     md["a_l"] = str(input())
     print("RunPICRUSt2 with rarefied ASV table? Y or N")
     raref_option = str(input())
-
+    start_option =
 
     Save_condition.save_cond_md(md,mp)
  #   Save_condition.save_cond_mp(mp)

@@ -16,6 +16,7 @@ from ManagerOfPath import ManagerOfPath
 
 if __name__ == '__main__':
     md={}
+    #esiste un cond_file? se si usa quello (da scriverlo)
     print("Insert path of reads to reads: path/00.RawData/trimmate_qiime2/")
     path_reads = str(input())
     print("Insert path to write with '/' ")
@@ -39,12 +40,9 @@ if __name__ == '__main__':
     print("RunPICRUSt2 with rarefied ASV table? Y or N")
     raref_option = str(input())
 
-    with open('condition_set2.txt', 'w') as data2:
-        data2.write(str(md))
+
     Save_condition.save_cond_md(md)
-   # condition = open("condition.txt", "w")
-   # condition.write(md)
-   # condition.close()
+ #   Save_condition.save_cond_mp(mp)
 
     #inizia da qua il programma
 
@@ -65,6 +63,4 @@ if __name__ == '__main__':
         PICRUSt2_rarefied.picrust2_tot(mp)
         PICRUSt2_rarefied.from_ec_to_KO_raref(mp)
     print("Ho finito, felice di servirti!")
-    condition=open("condition.txt","w")
-    condition.write(md)
-    condition.close()
+

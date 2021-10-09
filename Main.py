@@ -41,7 +41,7 @@ if __name__ == '__main__':
     raref_option = str(input())
 
 
-    Save_condition.save_cond_md(md)
+    Save_condition.save_cond_md(md,mp)
  #   Save_condition.save_cond_mp(mp)
 
     #inizia da qua il programma

@@ -14,9 +14,9 @@ from QIIME2_body import qiime_body
 
 if __name__ == '__main__':
     md={}
-    print("Insert path of reads to reads: path/00.RawData/trimmate_qiime2")
+    print("Insert path of reads to reads: path/00.RawData/trimmate_qiime2/")
     path_reads = str(input())
-    print("Insert path to write whitout slash ")
+    print("Insert path to write with '/' ")
     path_write = str(input())
     print("nome progetto (no_space):")
     project_name=str(input())
@@ -37,6 +37,9 @@ if __name__ == '__main__':
     print("RunPICRUSt2 with rarefied ASV table? Y or N")
     raref_option = str(input())
 
+    condition = open("condition.txt", "w")
+    condition.write(md)
+    condition.close()
 
     #inizia da qua il programma
 

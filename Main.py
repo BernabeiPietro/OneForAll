@@ -43,7 +43,6 @@ if __name__ == '__main__':
     md["a_l"] = str(input())
     print("RunPICRUSt2 with rarefied ASV table? Y or N")
     raref_option = str(input())
-    start_option =
 
     Save_condition.save_cond_md(md,mp)
  #   Save_condition.save_cond_mp(mp)

@@ -10,7 +10,6 @@ import dim_min_sample_finder
 import fastQC
 import open_qza_to_PICRUSt2
 import trunc_cuta_finder
-
 from ManagerOfPath import ManagerOfPath
 
 
@@ -40,6 +39,8 @@ if __name__ == '__main__':
     print("RunPICRUSt2 with rarefied ASV table? Y or N")
     raref_option = str(input())
 
+    with open('condition_set2.txt', 'w') as data2:
+        data2.write(str(md))
     Save_condition.save_cond_md(md)
    # condition = open("condition.txt", "w")
    # condition.write(md)

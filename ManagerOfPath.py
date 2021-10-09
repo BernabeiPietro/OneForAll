@@ -3,13 +3,13 @@ import os
 
 class ManagerOfPath:
     def __init__(self, path_base, path_datainput, project_name):
-        self.path_base = path_base
+        self.path_base = path_base + project_name
         self.path_datainput = path_datainput
-        self.path_qiime = path_base + "/QIIME2/"
-        self.path_cutadapt = path_base + "/CUTADAPT/"
-        self.path_figaro = path_base + "/FIGARO/"
-        self.path_picrust = path_base + "/PICRUSt2/"
-        self.path_fastqc = path_base + "/FASTQC/"
+        self.path_qiime = self.path_base + "/QIIME2/"
+        self.path_cutadapt = self.path_base + "/CUTADAPT/"
+        self.path_figaro = self.path_base + "/FIGARO/"
+        self.path_picrust = self.path_base + "/PICRUSt2/"
+        self.path_fastqc = self.path_base + "/FASTQC/"
         self.path_fqc_txt = self.path_fastqc+ "report/"
         self.project_name = project_name
         self.seq_qza = self.path_qiime + "sample_seq-" + project_name + ".qza"
@@ -19,6 +19,7 @@ class ManagerOfPath:
         self.DenStat_qza = self.path_qiime + "denoising_stat-" + project_name + ".qza"
         self.Tax = self.path_qiime + "taxonomy-" + project_name + ".qza"
 
+        os.mkdir(self.path_base)
         os.mkdir(self.path_qiime)
         os.mkdir(self.path_cutadapt)
         os.mkdir(self.path_figaro)

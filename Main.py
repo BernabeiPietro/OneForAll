@@ -5,12 +5,15 @@ import PICRUSt2_rarefied
 import QIIME2_body
 import QIIME2_import
 import QIIME2_tail
+import Save_condition
 import dim_min_sample_finder
 import fastQC
 import open_qza_to_PICRUSt2
 import trunc_cuta_finder
+
 from ManagerOfPath import ManagerOfPath
-from QIIME2_body import qiime_body
+
+
 
 if __name__ == '__main__':
     md={}
@@ -37,9 +40,10 @@ if __name__ == '__main__':
     print("RunPICRUSt2 with rarefied ASV table? Y or N")
     raref_option = str(input())
 
-    condition = open("condition.txt", "w")
-    condition.write(md)
-    condition.close()
+    Save_condition.save_cond_md(md)
+   # condition = open("condition.txt", "w")
+   # condition.write(md)
+   # condition.close()
 
     #inizia da qua il programma
 

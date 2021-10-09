@@ -1,9 +1,3 @@
-#def save_cond_md(md):
- #   with open('md_condition_set.txt', 'w') as data:
-  #      data.write(str(md))
-#def save_cond_mp(mp):
- #   with open('path_set.txt', 'w') as data:
-  #      data.write(str(mp))
 import os
 import json
 

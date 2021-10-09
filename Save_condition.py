@@ -8,7 +8,7 @@
 import json
 
 def save_cond_md(md):
-    with open(mp.path_base+'config_file.txt', 'w') as file:
+    with open("config_file.txt", 'w') as file:
         file.write(json.dumps(md))
 
 #da fare un file apposta per far leggere li impostazioni da file

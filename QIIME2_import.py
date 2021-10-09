@@ -3,7 +3,7 @@ def q_import (mp):
     os.system(
     "qiime tools import \
         --type 'SampleData[PairedEndSequencesWithQuality]' \
-        --input-path " + mp.path_datainput + "/*/*.fastq \
+        --input-path " + mp.path_datainput + "/*.fastq.gz \
         --output-path " + mp.seq_qza + " \
         --input-format CasavaOneEightSingleLanePerSampleDirFmt \
         && \

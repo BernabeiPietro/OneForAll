@@ -14,7 +14,7 @@ from QIIME2_body import qiime_body
 
 if __name__ == '__main__':
     md={}
-    print("Insert path of reads to reads:")
+    print("Insert path of reads to reads: path/00.RawData/trimmate_qiime2")
     path_reads = str(input())
     print("Insert path to write whitout slash ")
     path_write = str(input())

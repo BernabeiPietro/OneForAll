@@ -12,4 +12,4 @@ def q_import (mp):
         --o-visualization " +mp.seq_qzv+" \
       ")
 
-
+#i file devono essere .fastq.gz e non fq.gz bisogna rinominarli

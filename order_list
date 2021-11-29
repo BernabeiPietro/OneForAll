@@ -8,10 +8,11 @@ ordine,nome_file,butta_fuori,dentro_cosa
 3),trunc_cuta_finder,trunc_cuta,Cutadapt
 4),Cutadapt,mp.output_fq_qz,Figaro
 5),Figaro,trunc_f&trunc_r,QIIME2_body
+fino a qua è tutta da rifare.
 6),QIIME2_body,mp.ASV_qza&mp.rep_qza,open_qza_to_PICRUSt2
 7),dim_min_sample_finder,dim_min_sample,QIIME2_tail
 8),QIIME2_tail,
-# siamo rimasti qua
 9),open_qza_to_PICRUSt2,dna-sequences.fasta&feature-table.biom,PICRUSt2
 10),PICRUSt2_Tot&PICRUSt2_rarefied,output_per_R
+#siamo qua
 11),R

@@ -3,7 +3,7 @@ import os
 
 class ManagerOfPath:
     def __init__(self, path_base, path_datainput, project_name):
-        self.path_base = path_base +  project_name
+        self.path_base = path_base + project_name
         self.path_datainput = path_datainput
         self.path_qiime = self.path_base + "/QIIME2/"
         self.path_cutadapt = self.path_base + "/CUTADAPT/"

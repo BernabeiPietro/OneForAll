@@ -1,33 +1,5 @@
 
-"prende in pasto lo zip o già unzip e cerca la cartella /path/00.RawData" \
-"da qua ci estrae i file /*.raw_*.gz" \
-"li butta nella cartella path_to_write/fastq/" \
-"poi vanno cambiati di nome" \
-"va fatta una funzione che elimina i pezzi consecutivi tutti esattamente uguali in tutti i nomi dei file." \
-"FDMP19H000297-1a_L1_F1T90.1.raw_1.fq.gz" \
-"FDMP19H000297-1a_L1_ è ripetuto in tutti i file e va eliminato" \
-"F1T90.1.raw_1.fq.gz deve subire questi comandi:" \
-"rename -v 's/pezzo da cambiare/pezzo cambiato/' $PWD/*.gz" \
-"rename -v 's/_2/_01_L001_R2_001/' /path/Fastq/*.gz" \
-"rename -v 's/_1/_01_L001_R1_001/' /path/Fastq/*.gz" \
-"rename -v 's/.fq/.fastq/' /path/Fastq/*.gz" \
-"rename -v 's/.raw//' /path/Fastq/*.gz" \
-"così il nome dei file è apposto per l'import" \
-"prendere il file che si chiama: /path/00.RawData/SampleSeq_info.xls e vedere la colonna: BarcodeSequence" \
-"contare quanto è lungo l'oggetto e se sono tutti lunghi uguali " \
-"poi cutadapt deve tagliare i primi tot bp provenienti da BarcodeSequence con:" \
-"for i in {nomi,dei,file,completi}" \
-"do \
-cutadapt -u numero trovato prima -o /path di destinazione/$i path/di_lettura/$i \
-done" \
-"Ora va fatto Figaro su queste sequenze" \
-"a questo punto far partire l'import" \
-"dopo l'import va preso: per-sample-fastq-counts.tsv dentro il file .qzv e modificato togliendo" \
-"le ultime due colonne per intero e inserendo la colonna: Sample e mettendo come valore, la rima colonna senza le ultime 2-3 cifre" \
-"esempio: colonna1 F7T60.1, colonna2: F7T60" \
-"e si ci saranno le ripetizioni" \
-"infine rinominare il file con Metadata.tsv" \
-"a questo punto si può continuare come prima" \
+
 
 
 

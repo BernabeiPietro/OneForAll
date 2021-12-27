@@ -43,7 +43,7 @@ def count_equals(median):
 
 
 
-def run_fastqc(md,mp):
+def run_fastqc(md,mp): #calcola primer lenght
     os.system("fastqc -o "+mp.path_fastqc+" -t "+md["tread"]+" "+mp.path_datainput+"*.fastq.gz --nogroup --noextract \
     && \
     7z e "+mp.path_fastqc+" -o"+mp.path_fqc_txt+" fastqc_data.txt -aou -tzip -r")

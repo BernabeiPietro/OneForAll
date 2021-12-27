@@ -4,8 +4,8 @@ def qiime_body(md, mp):
     os.system("\
     qiime dada2 denoise-paired \
     --i-demultiplexed-seqs " + mp.seq_qza + " \
-    --p-trim-left-f " + md["primer_lenght"] + " \
-    --p-trim-left-r " + md["primer_lenght"] + " \
+    --p-trim-left-f " + md["primer_forward_l"] + " \
+    --p-trim-left-r " + md["primer_reverse_l"] + " \
     --p-trunc-len-f " + md["trunc_f"] + " \
     --p-trunc-len-r " + md["trunc_r"] + " \
     --o-representative-sequences " + mp.rep_qza + " \

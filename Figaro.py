@@ -7,7 +7,7 @@ import numpy as np
 
 def run_figaro(mp,md):
     os.system(" \
-    python3 figaro.py -i "+mp.output_fq_qz+" -o "+mp.path_figaro+" -a "+md["a_l"] +"-f "+md["primer_lenght"]+ "-r "+md["primer_lenght"]+" \
+    python3 figaro.py -i "+ mp.output_trimmed+" -o "+mp.path_figaro+" -a "+md["a_l"] +"-f "+md["primer_forward_l"]+ "-r "+md["primer_reverse_l"]+" \
         ")
     figaro_report= mp.path_figaro+"trimParameters.json"
     table=pd.read_json(figaro_report)

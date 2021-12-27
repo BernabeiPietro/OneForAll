@@ -10,6 +10,7 @@ class ManagerOfPath:
         self.path_figaro = self.path_base + "/FIGARO/"
         self.path_picrust = self.path_base + "/PICRUSt2/"
         self.path_fastqc = self.path_base + "/FASTQC/"
+        self.path_fastq_raw= self.path_base+"/fastq_raw"
         self.path_fqc_txt = self.path_fastqc+ "report/"
         self.project_name = project_name
         self.seq_qza = self.path_qiime + "sample_seq-" + project_name + ".qza"
@@ -26,4 +27,5 @@ class ManagerOfPath:
         os.mkdir(self.path_picrust)
         os.mkdir(self.path_fastqc)
         os.mkdir(self.path_fqc_txt)
+        os.mkdir(self.path_fastq_raw)
 

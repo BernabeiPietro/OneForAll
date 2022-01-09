@@ -2,9 +2,9 @@ import os
 import pandas as pd
 
 
-def extract_raw(mp,namezip):#aggiungi al main la funzione di input per il nome dello zip
-    os.system("7z e "+mp.path_datainput+namezip+" -o"+mp.path_fastq_raw+ " *.raw_*.gz -r")
-    os.system("7z e "+mp.path_datainput+namezip+" -o"+mp.path_base+ " SampleSeq_info.xls -r")
+def extract_raw(mp):#aggiungi al main la funzione di input per il nome dello zip
+    os.system("7z e "+mp.path_datainput+" -o"+mp.path_fastq_raw+ " *.raw_*.gz -r")
+    os.system("7z e "+mp.path_datainput+" -o"+mp.path_base+ " SampleSeq_info.xls -r")
 
 def rename(mp):
     os.system("rename -v 's/_2/_01_L001_R2_001/' "+mp.path_fastq_raw+"/*.gz")
